@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://res.cloudinary.com/dasajiprr/image/upload/v1686027184/SearchUserApp/logo_dwsntx.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/respond.css" />
+    <title>Thông kê</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="banner">
+        <a href="/">
+          <img
+            src="https://res.cloudinary.com/dasajiprr/image/upload/v1686027184/SearchUserApp/logo_dwsntx.png"
+            alt=""
+            class="banner__logo"
+          />
+        </a>
+        <div>
+          <h1 class="banner__heading">
+            Hệ thống tra cứu thông tin đối tượng BTXH & NCC
+          </h1>
+          <p class="banner__sub-heading">
+            Phường phước ninh - Quận hải châu - Thành Phố Đà Nẵng
+          </p>
+        </div>
+      </div>
+
+      <div class="header__wrapper">
+        <div class="header__action">
+          <a href="/login" class="header__btn-logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="statistical">
+          <div class="statistical__container">
+            <div class="statistical__chart">
+              <h4
+                class="statistical__chart--heading"
+                style="text-align: center"
+              >
+                Biểu Đồ Thể Hiện Tỉ Lệ Nhóm Hưởng Bảo Trợ Xã Hội
+                <div
+                  style="
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    padding-top: 0.8rem;
+                    padding-left: 1.6rem;
+                    text-align: end;
+                  "
+                >
+                  Đơn vị: <span style="color: #4f5dff">%</span>
+                </div>
+              </h4>
+              <canvas id="chart-1"></canvas>
+            </div>
+
+            <div class="statistical__table">
+              <div>
+                <div class="statistical__table-head">
+                  <p style="text-align: start">Nhóm hưởng BTXH</p>
+                  <p>Số người</p>
+                </div>
+              </div>
+              <div
+                id="statistical-tBody-1"
+                class="statistical__table-body"
+              ></div>
+            </div>
+          </div>
+          <div class="statistical__table-user-1 table__wrapper">
+            <div class="table__container">
+              <table class="table">
+                <thead class="table__head">
+                  <tr>
+                    <th style="text-align: center">STT</th>
+                    <th>Tên</th>
+                    <th>SDT</th>
+                    <th>Ngày sinh</th>
+                    <th>Địa chỉ</th>
+                    <th style="text-align: center">Chi tiết</th>
+                  </tr>
+                  <tr></tr>
+                </thead>
+                <tbody class="table__body table__body-1"></tbody>
+              </table>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button
+                class="more-btn form__btn-submit btn btn-primary display-none"
+              >
+                Xem thêm
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="statistical">
+          <div class="statistical__container">
+            <div class="statistical__chart">
+              <h4
+                class="statistical__chart--heading"
+                style="padding-bottom: 4.8rem; text-align: center"
+              >
+                Biểu Đồ Thể Hiện Tỉ Lệ Đối Tượng Chính Sách Người Có Công
+                <div
+                  style="
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    padding-top: 0.8rem;
+                    padding-left: 1.6rem;
+                    text-align: end;
+                  "
+                >
+                  Đơn vị: <span style="color: #4f5dff">%</span>
+                </div>
+              </h4>
+              <canvas id="chart-2"></canvas>
+            </div>
+
+            <div class="statistical__table">
+              <div>
+                <div class="statistical__table-head">
+                  <p style="text-align: start">Đối tượng NCC</p>
+                  <p style="white-space: nowrap">Số người</p>
+                </div>
+              </div>
+              <div
+                id="statistical-tBody-2"
+                class="statistical__table-body"
+                style="height: 600px; overflow: hidden; overflow-y: auto"
+              ></div>
+            </div>
+          </div>
+
+          <div class="statistical__table-user-2 table__wrapper">
+            <div class="table__container">
+              <table class="table">
+                <thead class="table__head">
+                  <tr>
+                    <th style="text-align: center">STT</th>
+                    <th>Tên</th>
+                    <th>SDT</th>
+                    <th>Ngày sinh</th>
+                    <th>Địa chỉ</th>
+                    <th style="text-align: center; white-space: nowrap">
+                      Chi tiết
+                    </th>
+                  </tr>
+                  <tr></tr>
+                </thead>
+                <tbody class="table__body table__body-2"></tbody>
+              </table>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button
+                class="more-btn form__btn-submit btn btn-primary display-none"
+              >
+                Xem thêm
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="statistical">
+          <div class="statistical__container">
+            <div class="statistical__chart">
+              <h4
+                class="statistical__chart--heading"
+                style="text-align: center"
+              >
+                Biểu Đồ Thể Hiện Tỉ Lệ Nhóm Đối Tượng Chính Sách Người Có Công
+                Và Nhóm Người Bảo Trợ Xã Hội
+                <div
+                  style="
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    padding-top: 0.8rem;
+                    padding-left: 1.6rem;
+                    text-align: end;
+                  "
+                >
+                  Đơn vị: <span style="color: #4f5dff">%</span>
+                </div>
+              </h4>
+              <canvas id="chart-3"></canvas>
+            </div>
+
+            <div class="statistical__table">
+              <div>
+                <div class="statistical__table-head">
+                  <p style="text-align: start">Nhóm đối tượng</p>
+                  <p style="white-space: nowrap">Tổng số người</p>
+                </div>
+              </div>
+              <div
+                id="statistical-tBody-3"
+                class="statistical__table-body"
+              ></div>
+            </div>
+          </div>
+
+          <div class="statistical__table-user-3 table__wrapper">
+            <div class="table__container">
+              <table class="table">
+                <thead class="table__head">
+                  <tr>
+                    <th style="text-align: center">STT</th>
+                    <th>Tên</th>
+                    <th>SDT</th>
+                    <th>Ngày sinh</th>
+                    <th>Địa chỉ</th>
+                    <th style="text-align: center; white-space: nowrap">
+                      Chi tiết
+                    </th>
+                  </tr>
+                  <tr></tr>
+                </thead>
+                <tbody class="table__body table__body-3"></tbody>
+              </table>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button
+                class="more-btn form__btn-submit btn btn-primary display-none"
+              >
+                Xem thêm
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal">
+      <div class="modal__container">
+        <div class="modal__wrapper">
+          <h3 class="modal__heading">Thông tin chi tiết</h3>
+          <div class="modal__info"></div>
+        </div>
+        <button class="modal__btn-close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/javascripts/statistical.js"></script>
+  </body>
+</html>
